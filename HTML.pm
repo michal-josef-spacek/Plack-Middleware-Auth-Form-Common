@@ -74,7 +74,7 @@ sub _login {
 		return [
 			301,
 			['Location' => $secure_url],
-			['XXX Need a secure connection'],
+			['Need a secure connection'],
 		];
 	}
 
@@ -144,7 +144,7 @@ sub _logout {
 	return [
 		303,
 		['Location' => $self->after_logout || '/' ],
-		['XXX After logout'],
+		['After logout'],
 	];
 }
 
