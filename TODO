@@ -1,7 +1,10 @@
 TODO
 ====
 1. Security check move to middleware.
-2.
+2. Doc
+Add note: Base on Plack::Middleware::Auth::Form
+3. Tests.
+4.
 
 Applied
 =======
