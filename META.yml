@@ -1,5 +1,5 @@
 ---
-abstract: 'Plack middleware for auth form with Tags::HTML.'
+abstract: 'Plack middleware for common auth form.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
@@ -15,7 +15,7 @@ license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: Plack-Middleware-Auth-Tags-HTML
+name: Plack-Middleware-Auth-Form-Common
 no_index:
   directory:
     - inc
@@ -28,8 +28,8 @@ requires:
   Plack::Util::Accessor: 0
   perl: 5.8.0
 resources:
-  bugtracker: https://github.com/michal-josef-spacek/Plack-Middleware-Auth-Tags-HTML/issues
-  homepage: https://github.com/michal-josef-spacek/Plack-Middleware-Auth-Tags-HTML
+  bugtracker: https://github.com/michal-josef-spacek/Plack-Middleware-Auth-Form-Common/issues
+  homepage: https://github.com/michal-josef-spacek/Plack-Middleware-Auth-Form-Common
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/michal-josef-spacek/Plack-Middleware-Auth-Tags-HTML
+  repository: git://github.com/michal-josef-spacek/Plack-Middleware-Auth-Form-Common
 version: '0.01'

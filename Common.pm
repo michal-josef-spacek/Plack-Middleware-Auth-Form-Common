@@ -1,4 +1,4 @@
-package Plack::Middleware::Auth::Form::Tags::HTML;
+package Plack::Middleware::Auth::Form::Common;
 
 use base qw(Plack::Middleware);
 use strict;
