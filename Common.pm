@@ -6,6 +6,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Plack::Request;
+use Plack::Response;
 use Plack::Util::Accessor qw(after_logout app_form app_login_logged authenticator secure ssl_port);
 
 our $VERSION = 0.01;
@@ -28,8 +29,16 @@ sub call {
 		return $self->_logout($env);
 	}
 
-	# Continue to application.
-	return $self->app->($env);
+	# Logged, continue to application.
+	if ($env->{'psgix.session'}{'user_id'}) {
+		return $self->app->($env);
+
+	# Redirect to login.
+	} else {
+		my $res = Plack::Response->new;
+		$res->redirect('/login');
+		return $res->finalize;
+	}
 }
 
 sub prepare_app {
