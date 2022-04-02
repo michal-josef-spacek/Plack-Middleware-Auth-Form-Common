@@ -14,18 +14,18 @@ our $VERSION = 0.01;
 sub call {
 	my ($self, $env) = @_;
 
-	my $path = $env->{'PATH_INFO'};
+	my $path_info = $env->{'PATH_INFO'};
 
 	if ($env->{'psgix.session'}{'remember'}) {
-		if ($path ne '/logout') {
+		if ($path_info ne '/logout') {
 			$env->{'psgix.session.options'}{'expires'} = time + 60 * 60 * 24 * 30;
 		}
 	}
 
 	# Pages inside this middleware.
-	if ($path eq '/login') {
+	if ($path_info eq '/login') {
 		return $self->_login($env);
-	} elsif ($path eq '/logout') {
+	} elsif ($path_info eq '/logout') {
 		return $self->_logout($env);
 	}
 
