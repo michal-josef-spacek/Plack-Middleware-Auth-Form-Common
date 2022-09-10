@@ -48,8 +48,15 @@ sub prepare_app {
 		err 'Missing application for form.';
 	}
 
+	# Default is automatic redirect to root.
 	if (! defined $self->app_login_logged) {
-		err 'Missing application for login page if user is logged.';
+		$self->app_login_logged(
+			sub {
+				my $res = Plack::Response->new;
+				$res->redirect('/');
+				return $res->finalize;
+			}
+		);
 	}
 
 	if (! defined $self->authenticator) {
